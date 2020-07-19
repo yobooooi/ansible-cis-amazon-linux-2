@@ -1,3 +1,27 @@
+anthcourtney.cis-amazon-linux
+=========
+
+Build Status
+------------
+
+Branch | Status
+| ------------- |:-------------:|
+Master | [![Build Status](https://travis-ci.org/anthcourtney/ansible-role-cis-amazon-linux.svg?branch=master)](https://travis-ci.org/anthcourtney/ansible-role-cis-amazon-linux)
+Build | [![Build Status](https://travis-ci.org/anthcourtney/ansible-role-cis-amazon-linux.svg?branch=build)](https://travis-ci.org/anthcourtney/ansible-role-cis-amazon-linux)
+
+Development
+-------------
+We are going to use "master" branch only for fully tested changes.
+
+**Going forward please send your pull requests to "build" branch.**
+
+We need more community support to make changes and most importantly to test and review changes. If you would like to participate, please send a note to [Anth](https://github.com/anthcourtney) or [Chandan](https://github.com/chandanchowdhury).
+
+The major work to be done are
+* CIS Benchmark v2.2.0
+* Ansible 2.5 and above
+* Amazon Linux 2 LTS
+
 Introduction
 ------------
 
@@ -71,10 +95,10 @@ A more advanced example, which includes modifications to the default values used
       - 5.4.4
       - 3.4.2
       - 3.4.3
-      - 6.2.13   
+      - 6.2.13
     cis_pass_max_days: 45
-    cis_umask_default: 027
- 
+    cis_umask_default: 002
+
   roles:
     - { role: ansible-cis-amazon-linux-2,
         in_vm: true,
@@ -178,10 +202,13 @@ The following tests have been flagged but are not yet implemented:
 
 * Test application of the role against the Vagrant ```mvbcoding/awslinux``` image, using the ansible provisioner.
 
+### Lint
+ Please run ```make lint``` to make sure we are following ansible standards.
+
 License
 -------
 
-BSD. 
+MIT.
 
 Author Information
 ------------------
